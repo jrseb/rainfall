@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RainfallLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:RainfallLibrary.Common.RainfallReadingException">
+            <summary>
+            Custom Error code to make things simple to identify in api
+            </summary>
+            <param name="statusCode">Http valid status code</param>
+            <param name="message">Message you want to send</param>
+        </member>
+        <member name="M:RainfallLibrary.Common.RainfallReadingException.#ctor(System.Int32,System.String)">
+            <summary>
+            Custom Error code to make things simple to identify in api
+            </summary>
+            <param name="statusCode">Http valid status code</param>
+            <param name="message">Message you want to send</param>
+        </member>
+        <member name="F:RainfallLibrary.Common.RainfallReadingException.Code">
+            <summary>
+            HTTP status code to return
+            </summary>
+        </member>
+        <member name="T:RainfallLibrary.Dtos.RainfallReading">
+            <summary>
+            Datails of rainfall readings
+            </summary>
+        </member>
+        <member name="P:RainfallLibrary.Dtos.RainfallReading.DateMeasured">
+            <summary>
+            Date and time of when measurement was taken
+            </summary>
+        </member>
+        <member name="P:RainfallLibrary.Dtos.RainfallReading.AmountMeasured">
+            <summary>
+            Amount of rainfall during the time of measurement
+            </summary>
+        </member>
+        <member name="T:RainfallLibrary.Interfaces.IWeatherReport">
+            <summary>
+            Calls that can be made to an assume external source
+            </summary>
+        </member>
+        <member name="M:RainfallLibrary.Interfaces.IWeatherReport.GetRainfallReading(System.String,System.Int32)">
+            <summary>
+            Fetch the rainfall reading from external service
+            </summary>
+            <param name="stationId">StationId to fetch</param>
+            <param name="count">No of records to return</param>
+            <returns></returns>
+        </member>
+        <member name="T:RainfallLibrary.Services.WeatherReportService">
+            <summary>
+            Controller that handles external Weather Report service
+            </summary>
+        </member>
+        <member name="M:RainfallLibrary.Services.WeatherReportService.GetRainfallReading(System.String,System.Int32)">
+            <summary>
+            Fetch the needed rainfall reading from source
+            </summary>
+            <param name="stationId">Station to check</param>
+            <param name="count">number of record to fetch</param>
+            <returns></returns>
+        </member>
+        <member name="M:RainfallLibrary.Services.WeatherReportService.Throw400Error``1(System.String,``0)">
+            <summary>
+            Custom throw procedure to specify correct status code and identify parameter issues
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="paraName"></param>
+            <param name="value"></param>
+            <exception cref="T:RainfallLibrary.Common.RainfallReadingException"></exception>
+        </member>
+    </members>
+</doc>
