@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RainfallApi</name>
+    </assembly>
+    <members>
+        <member name="M:RainfallApi.Controllers.Rainfall.GetRainfall(System.String,System.Int32)">
+            <summary>
+            Get rainfall readings by station id
+            </summary>
+            <param name="stationId">The Id of the reading station</param>
+            <param name="count">Number of readings to return</param>
+            <response code="200">A list of rainfall readings successfully retrieved</response>
+            <response code="400">Invalid request</response>
+            <response code="404">No readings found for the specified stationId</response>
+            <response code="500">Internal server error</response>
+        </member>
+    </members>
+</doc>
